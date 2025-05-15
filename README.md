@@ -29,6 +29,9 @@ This script offers the following functionalities:
     * Prompts the user for a date in MM/DD/YYYY format.
     * Validates the string for correct date format and valid date values.
     * Can return the validated date as a string or as a tuple of integers (month, day, year).
+* **String Validation:**
+    * Prompts the user for a string.
+    * Validates ensuring it is not in a list of banned strings.
 
 ## Requirements
 
@@ -68,6 +71,7 @@ Here's a brief overview of the main functions available in `InputHandler.py`:
 * `input_char(prompt, valid_chars, to_caps)`: Prompts for and validates a single character, optionally against a set of valid characters and with case conversion.
 * `input_string_date(prompt)`: Prompts for and validates a date string, returning it in MM/DD/YYYY format.
 * `input_tuple_date(prompt)`: Prompts for a date, validates it, and returns its components (month, day, year) as a tuple of integers.
+* `input_string(prompt, banned_strings, error_output)`: Prompts for a string, validates it and outputs an error message if need be.
 
 For detailed information on arguments, return values, and specific error handling for each function, please refer to the docstrings within the `InputHandler.py` script.
 
