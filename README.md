@@ -24,3 +24,24 @@ To use the functions in this module, simply import it into your Python script:
 import InputHandler
 
 Then, you can call the desired functions as needed.
+## Functions
+
+Here's a breakdown of the available functions:
+
+### `input_integer(prompt: str = "\n\tEnter an integer: ", lower_bound: int = 0, upper_bound: int = 32767, inclusion: bool = True) -> int`
+
+Prompts the user to enter an integer and validates it against specified bounds.
+
+* **`prompt`**: The message displayed to the user.
+* **`lower_bound`**: The lower limit for the integer value.
+* **`upper_bound`**: The upper limit for the integer value.
+* **`inclusion`**: If `True` (default), the bounds are inclusive (e.g., `lower_bound <= value <= upper_bound`). If `False`, bounds are exclusive (e.g., `lower_bound < value < upper_bound`).
+* **Returns**: The validated integer entered by the user.
+
+**Example:**
+
+age = InputHandler.input_integer(prompt="Please enter your age: ", lower_bound=1, upper_bound=120)
+print(f"Your age is: {age}")
+
+quantity = InputHandler.input_integer(prompt="Enter quantity (1-99): ", lower_bound=1, upper_bound=99)
+print(f"Quantity set to: {quantity}")
