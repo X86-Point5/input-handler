@@ -5,14 +5,15 @@ Console Input Operations Handler (InputHandler.py)
 Provides a range of functions meant for dealing with console inputs
 
 Features:
--Validates Integer, Floating Point, and Single Character Input
+-Validates Integer, Floating Point, String, and Single Character Input
 -Includes Bounds Checking On Input
 -Validates Date Input
 -Includes the Option to Allow Only for Certain Characters
+-Includes the Option to Only Allow for Selected Strings
 """
 
 __author__ = "Maximus Barraza (Github: X86-Point5)"
-__verison__ = "1.0.0"
+__verison__ = "1.1.0"
 __date__ = "2025-05-15"
 
 #used for validating date input
@@ -298,7 +299,45 @@ def input_tuple_date(prompt: str = "\n\tEnter a data in the format (MM/DD/YYYY):
             #If a date can not be constructed then an error is outputed
             #and the loop repeats
             print("\tERROR - Invalid date format or value. Please use MM/DD/YYYY and enter a valid date.\n")
-        
+  
+            
+
+
+def input_string(prompt: str = "\n\tEnter a string: ", banned_strings: list = [],
+                error_output: str = "\tERROR - Input not allowed.\n") -> str:
+
+    """Gets a string input from the user, with an option to ban certain strings.
+
+    This function will continuously prompt the user for input until a string is
+    entered that is not in the `banned_strings` list.
+
+    Args:
+        prompt (str, optional): The message displayed to the user when asking for input.
+            Defaults to "\n\tEnter a string: ".
+        banned_strings (list, optional): A list of strings that are not allowed as input.
+            If the user enters a string from this list, the `error_output` message
+            will be displayed, and they will be prompted again. Defaults to an empty list,
+            meaning no strings are banned.
+        error_output (str, optional): The message displayed to the user if they enter
+            a banned string. Defaults to "\tERROR - Input not allowed.\n".
+
+    Returns:
+        str: The string entered by the user that is not in the `banned_strings` list.
+    """
+
+    #loops until the string given is correct
+    while True:
+
+        #takes the string from the user
+        return_string = input(prompt)
+
+        #Checks to make sure there is no banned string or that return_string
+        #is not a banned string. If the return_string is banned then the error
+        #message is outputted.
+        if not banned_strings or not return_string in banned_strings:
+            return return_string
+        else:
+            print(error_output)
 
 
 
