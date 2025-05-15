@@ -41,7 +41,7 @@ This script offers the following functionalities:
 1.  **Ensure Python is Installed:** Make sure you have Python 3.x installed on your system.
 2.  **Save the Script:** Save the `InputHandler.py` script to your desired location.
 3.  **Import in Your Project:** You can import the `InputHandler` module into your own Python scripts to use its functions:
-    '''py
+    ```python
     import InputHandler
 
     # Example: Get a valid integer from the user
@@ -58,7 +58,7 @@ This script offers the following functionalities:
         to_caps=True
     )
     print(f"You selected: {user_choice}")
-    '''
+    ```
 ## Functions Overview
 
 Here's a brief overview of the main functions available in `InputHandler.py`:
